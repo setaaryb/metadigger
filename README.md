@@ -1,4 +1,4 @@
-# Stego Scanner Tools V0.1
+# METADIGGER V0.1
 
 Tool CLI berbasis Python untuk mendeteksi, mengekstrak, dan mendemonstrasikan data tersembunyi di dalam file (teknik *append after EOF*), cocok untuk belajar forensik file dan tantangan CTF.
 
