@@ -79,24 +79,6 @@ Jika signature ZIP/RAR ditemukan tetapi file tidak bisa dibuka, kemungkinan bebe
 
 ---
 
-## Jika Script Di-encode / Di-obfuscate
-
-Script ini bisa dibungkus (packed) menjadi satu baris seperti:
-
-```python
-_=lambda __,k:__import__('marshal').loads(__import__('zlib').decompress(...));exec((_)(b'...'))
-```
-
-Bungkus semacam ini **tidak butuh instalasi tambahan**, karena hanya memakai modul bawaan Python: `marshal`, `zlib`, `base64`, `codecs`. Jadi `requirements.txt` tetap tidak diperlukan.
-
-Catatan penting:
-
-1. **Versi Python harus sama.** Format `marshal` bergantung pada versi minor Python. File yang di-encode dengan Python 3.11 umumnya tidak bisa dijalankan di 3.10 atau 3.12 (muncul error `bad marshal data` atau `unmarshallable object`). Jalankan dengan versi Python yang sama dengan saat meng-encode, atau distribusikan versi source asli.
-2. Menjalankan `exec` pada kode yang tidak dikenal berisiko. Jalankan hanya file dari sumber yang kamu percaya.
-3. Obfuscation bukan enkripsi. Siapa pun tetap bisa membongkarnya, jadi jangan menaruh data sensitif di dalamnya.
-
----
-
 ## Struktur Proyek
 
 ```
